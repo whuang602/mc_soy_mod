@@ -1,4 +1,4 @@
-package net.liam.jojomod.item;
+package net.liam.soybeanmod.item;
 
 import net.minecraft.world.food.FoodProperties;
 

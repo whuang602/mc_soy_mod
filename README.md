@@ -1,13 +1,6 @@
-First Build of MC mod
+First Build of MC Soy Mod
 
 Completed Features
-- soybean
-- soybean craving bar
-
-Incomplete Features
-- soy sauce
-- edamame (plant)
-- tofu
-- soy milk
-- soyboy
-- sliding (sprinting + shift = slide) (shrink down to one block, like swimming animation)
+- soybean (obtainable from creative mode tab)
+- soybean craving meter (no visual bar)
+- eating refills craving meter

@@ -1,4 +1,4 @@
-package net.liam.jojomod.thirst;
+package net.liam.soybeanmod.craving;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -12,25 +12,24 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
 
-public class PlayerThirstProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
+public class PlayerCravingProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
 
-    public static Capability<PlayerThirst> PLAYER_THIRST = CapabilityManager.get(new CapabilityToken<PlayerThirst>() {});
+    public static Capability<PlayerCraving> PLAYER_CRAVING = CapabilityManager.get(new CapabilityToken<PlayerCraving>() {});
 
-    private PlayerThirst thirst = null;
-    private final LazyOptional<PlayerThirst> optional = LazyOptional.of(this::createPlayerThirst);
+    private PlayerCraving craving = null;
+    private final LazyOptional<PlayerCraving> optional = LazyOptional.of(this::createPlayerCraving);
 
-    private PlayerThirst createPlayerThirst() {
-        if (this.thirst == null) {
-            this.thirst = new PlayerThirst();
-            this.thirst.resetThirst();
+    private PlayerCraving createPlayerCraving() {
+        if (this.craving == null) {
+            this.craving = new PlayerCraving();
         }
-        return this.thirst;
+        return this.craving;
     }
 
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (cap == PLAYER_THIRST)
+        if (cap == PLAYER_CRAVING)
             return optional.cast();
         return LazyOptional.empty();
     }
@@ -38,13 +37,13 @@ public class PlayerThirstProvider implements ICapabilityProvider, INBTSerializab
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag nbt = new CompoundTag();
-        createPlayerThirst().saveNBTData(nbt);
+        createPlayerCraving().saveNBTData(nbt);
         return nbt;
     }
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
-        createPlayerThirst().loadNBTData(nbt);
+        createPlayerCraving().loadNBTData(nbt);
     }
     
 }

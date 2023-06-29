@@ -1,9 +1,9 @@
-package net.liam.jojomod;
+package net.liam.soybeanmod;
 
 import com.mojang.logging.LogUtils;
 
-import net.liam.jojomod.event.Global;
-import net.liam.jojomod.item.ModItems;
+import net.liam.soybeanmod.event.Global;
+import net.liam.soybeanmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -34,18 +34,18 @@ import org.slf4j.Logger;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(Soybean.MOD_ID)
-public class Soybean
+@Mod(SoybeanMod.MOD_ID)
+public class SoybeanMod
 {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "jojomod";
+    public static final String MOD_ID = "soybeanmod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public Soybean()
+    public SoybeanMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
