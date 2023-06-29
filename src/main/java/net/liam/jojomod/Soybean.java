@@ -2,6 +2,7 @@ package net.liam.jojomod;
 
 import com.mojang.logging.LogUtils;
 
+import net.liam.jojomod.event.Global;
 import net.liam.jojomod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -33,35 +34,33 @@ import org.slf4j.Logger;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(JoJoMod.MOD_ID)
-public class JoJoMod
+@Mod(Soybean.MOD_ID)
+public class Soybean
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "jojomod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public JoJoMod()
+    public Soybean()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
-
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        
     }
 
     // Add the example block item to the building blocks tab
