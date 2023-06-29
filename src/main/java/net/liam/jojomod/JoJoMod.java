@@ -2,6 +2,7 @@ package net.liam.jojomod;
 
 import com.mojang.logging.LogUtils;
 
+import net.liam.jojomod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -30,6 +31,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(JoJoMod.MOD_ID)
 public class JoJoMod
@@ -45,6 +47,9 @@ public class JoJoMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ModItems.register(modEventBus);
+
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -62,8 +67,8 @@ public class JoJoMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        // if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-        //     event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+            event.accept(ModItems.SOYBEAN);
     }
 
 
