@@ -51,22 +51,25 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        time.Tick();
+        System.out.println(event.player.tickCount);
         if (event.side == LogicalSide.SERVER) {
+            time.addDouble();
             event.player.getCapability(PlayerCravingProvider.PLAYER_CRAVING).ifPresent(craving -> {
-                if ( craving.getCraving() > 0 && time.Minute()) {
-                    craving.subCraving(1);
-                    if (craving.getCraving() > 0)
-                    {
-                        event.player.sendSystemMessage(Component.literal("Soy Craving: " + craving.getCraving()));
+                if (!time.isDouble()) {
+                    if ( craving.getCraving() > 0 && (event.player.tickCount % 1200) == 0) {
+                        craving.subCraving(1);
+                        if (craving.getCraving() > 0)
+                        {
+                            event.player.sendSystemMessage(Component.literal("Soy Craving: " + craving.getCraving()));
+                        }
+                        else {
+                            event.player.sendSystemMessage(Component.literal("You really need soy..."));
+                        }
                     }
-                    else {
-                        event.player.sendSystemMessage(Component.literal("You really need soy..."));
+                    else if (craving.getCraving() == 0 && (event.player.tickCount % 300) == 0) {
+                        event.player.sendSystemMessage(Component.literal("Ouchies"));
+                        event.player.setHealth(event.player.getHealth()-2);
                     }
-                }
-                else if ( craving.getCraving() == 0 && time.Fifteen()) {
-                    event.player.sendSystemMessage(Component.literal("Ouchies"));
-                    event.player.setHealth(event.player.getHealth()-2);
                 }
             });
 
@@ -76,12 +79,11 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onItemUseFinish(LivingEntityUseItemEvent.Finish event) {
-        time.addDouble();
-        if(event.getEntity() instanceof Player && !time.isDouble()) {
+        time.addItemFinishDouble();
+        if(event.getEntity() instanceof Player && !time.isFinishDouble()) {
             if (event.getItem().getItem() == ModItems.SOYBEAN.get()) {
                 event.getEntity().getCapability(PlayerCravingProvider.PLAYER_CRAVING).ifPresent( craving -> {
                     craving.addCraving(1);
-                    time.resetTick();
                     event.getEntity().sendSystemMessage(Component.literal("Soy Craving: " + craving.getCraving())); });
             }
         }

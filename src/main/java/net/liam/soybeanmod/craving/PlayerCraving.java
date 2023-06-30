@@ -3,12 +3,12 @@ package net.liam.soybeanmod.craving;
 import net.minecraft.nbt.CompoundTag;
 
 public class PlayerCraving {
-    private int craving = 1;
+    private int craving = 10;
     private final int MIN_CRAVING = 0;
     private final int MAX_CRAVING = 10;
 
     public void resetCraving() {
-        this.craving = 1;
+        this.craving = 10;
     }
 
     public int getCraving() {
