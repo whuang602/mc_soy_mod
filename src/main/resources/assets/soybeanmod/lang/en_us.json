@@ -1,4 +1,10 @@
 {
     "item.soybeanmod.soybean": "Soybean",
-    "item.soybeanmod.soy_sauce": "Soy Sauce"
+    "item.soybeanmod.soy_sauce": "Soy Sauce",
+    "item.soybeanmod.gypsum": "Gypsum",
+    "item.soybeanmod.tofu": "Tofu",
+    "item.soybeanmod.edamame": "Edamame",
+    "item.soybeanmod.soybunch": "Soybunch",
+    "block.soybeanmod.gypsum_ore": "Gypsum Ore"
+
 }

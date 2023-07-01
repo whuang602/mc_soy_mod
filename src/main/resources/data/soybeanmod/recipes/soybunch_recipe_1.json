@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "misc",
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "soybeanmod:soybean"
+      }
+    },
+    "result": {
+      "item": "soybeanmod:soybunch",
+      "count": 1
+    }
+  }
+  

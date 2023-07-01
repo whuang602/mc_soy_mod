@@ -2,6 +2,7 @@ package net.liam.soybeanmod;
 
 import com.mojang.logging.LogUtils;
 
+import net.liam.soybeanmod.block.ModBlocks;
 import net.liam.soybeanmod.event.Global;
 import net.liam.soybeanmod.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -50,6 +51,7 @@ public class SoybeanMod
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -69,6 +71,13 @@ public class SoybeanMod
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.SOYBEAN);
             event.accept(ModItems.SOY_SAUCE);
+            event.accept(ModItems.TOFU);
+            event.accept(ModItems.GYPSUM);
+            event.accept(ModItems.EDAMAME);
+            event.accept(ModItems.SOYBUNCH);
+        }
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.GYPSUM_ORE);
         }
 
     }

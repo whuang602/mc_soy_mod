@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "soybeanmod:block/gypsum_ore"
+    }
+}

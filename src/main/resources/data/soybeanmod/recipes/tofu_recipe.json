@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "misc",
+    "ingredients": [
+      {
+        "item": "soybeanmod:gypsum"
+      },
+      {
+        "item": "soybeanmod:soybunch"
+      }
+    ],
+    "result": {
+      "item": "soybeanmod:tofu",
+      "count": 1
+    }
+  }

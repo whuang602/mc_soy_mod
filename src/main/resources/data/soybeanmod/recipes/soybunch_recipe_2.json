@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "misc",
+    "ingredients": [
+      {
+        "item": "soybeanmod:edamame"
+      },
+      {
+        "item": "soybeanmod:edamame"
+      },
+      {
+        "item": "soybeanmod:edamame"
+      }
+    ],
+    "result": {
+      "item": "soybeanmod:soybunch",
+      "count": 1
+    }
+  }
