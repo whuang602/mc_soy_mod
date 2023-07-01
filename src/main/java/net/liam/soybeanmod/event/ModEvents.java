@@ -51,7 +51,6 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        System.out.println(event.player.tickCount);
         if (event.side == LogicalSide.SERVER) {
             time.addDouble();
             event.player.getCapability(PlayerCravingProvider.PLAYER_CRAVING).ifPresent(craving -> {
