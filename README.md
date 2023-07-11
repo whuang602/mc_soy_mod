@@ -1,4 +1,4 @@
-First Build of MC Soy Mod
+Minecraft Soy Mod
 
 Completed Features
 - Items(5): soybean, soybunch, soy sauce, tofu, gypsum
@@ -9,8 +9,8 @@ Completed Features
 
 Note:
 - Currently there is no way to get edamame in survival mode
-- Currently the craving meter is non-togglable
-- Gypsum ore generation is being worked on
+- Currently the craving meter is non-togglable and on by default
+- Gypsum ore generation is being worked on (maybe, we will see)
 
 Changelog 
 - added soybean to creeper's loot table
