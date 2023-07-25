@@ -1,4 +1,9 @@
-Minecraft Soy Mod
+Minecraft Soy Mod (for verson 1.20.1)
+
+How to access the mod .jar file
+- resolve any conflicts
+- run .\gradlew build (add --warning-mode=all if you want build error details)
+- the .jar file should be in directory "build/libs"
 
 Completed Features
 - Items(5): soybean, soybunch, soy sauce, tofu, gypsum
